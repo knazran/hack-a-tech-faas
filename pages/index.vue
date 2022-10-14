@@ -1,5 +1,5 @@
 <template>
-  <Tutorial/>
+  <Checkout/>
 </template>
 
 <script>
