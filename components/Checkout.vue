@@ -15,21 +15,26 @@
           </div>
         </div>
 
-        <input
-          type="checkbox"
-          value=""
-          id="default-toggle"
-          class="sr-only peer"
-        />
-        <div class="form-check form-switch justify-self-end">
+        <div
+          class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in"
+        >
           <input
-            class="form-check-input appearance-none w-9 -ml-10 rounded-full float-left h-5 align-top bg-no-repeat bg-contain bg-gray-300 focus:outline-none focus:bg-red-400 cursor-pointer shadow-sm"
+            v-model="checked"
             type="checkbox"
-            role="switch"
+            name="toggle"
+            id="toggle"
+            class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
           />
+          <label
+            for="toggle"
+            class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"
+          ></label>
         </div>
       </div>
+
+      <!-- Toggle On Component -->
       <div
+        v-if="checked"
         class="flex justify-between items-center bg-white ml-6 mr-8 py-4 px-8 text-black border-t"
         style="font-size: 16px"
       >
@@ -43,7 +48,9 @@
               class="rounded mx-8 mb-3 w-64 text-gray-700 bg-white border border-solid border-gray-300 transition ease-in-out focus:text-gray-700 focus:bg-white text-xs px-2 py-1"
               placeholder="Enter your ASNB Account Number"
             />
-            <div class="relative mt-1 bg-white border border-solid border-gray-300  mx-8 w-64 rounded">
+            <div
+              class="relative mt-1 bg-white border border-solid border-gray-300 mx-8 w-64 rounded"
+            >
               <div
                 class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-2"
               >
@@ -60,11 +67,15 @@
           </div>
         </div>
         <div class="w-2/5 self-end flex justify-end">
-        <div class="justify-self-end">
-          <p class="text-gray-500 text-xs">Have not signed up?</p>
-          <button class="text-white px-4 py-1 rounded mt-1" style="background-color: #1C5195">Create an ASNB Account</button>
-        </div>
-        
+          <div class="justify-self-end">
+            <p class="text-gray-500 text-xs">Have not signed up?</p>
+            <button
+              class="text-white px-4 py-1 rounded mt-1"
+              style="background-color: #1c5195"
+            >
+              Create an ASNB Account
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -76,5 +87,20 @@
 <script>
 export default {
   name: "Checkout",
+  data() {
+    return {
+      checked: false
+    }
+  }
 };
 </script>
+
+<style>
+.toggle-checkbox:checked {
+  right: 0;
+  border-color: #ee4d2d;
+}
+.toggle-checkbox:checked + .toggle-label {
+  background-color: #ee4d2d;
+}
+</style>
