@@ -3,7 +3,10 @@
   <div style="background-color: #f5f5f5">
     <img src="~/assets/Checkout.png" />
     <div class="w-2/3 mx-auto mt-2 mb-2">
-      <div class="flex justify-between items-center bg-white ml-6 mr-8 p-4 text-black" style="font-size: 16px">
+      <div
+        class="flex justify-between items-center bg-white ml-6 mr-8 p-4 text-black"
+        style="font-size: 16px"
+      >
         <div class="flex items-center">
           <img class="h-5" src="~/assets/invest-1.png" />
           <p class="pl-2">Invest Round Up</p>
@@ -12,13 +15,57 @@
           </div>
         </div>
 
-        <input type="checkbox" value="" id="default-toggle" class="sr-only peer" />
+        <input
+          type="checkbox"
+          value=""
+          id="default-toggle"
+          class="sr-only peer"
+        />
         <div class="form-check form-switch justify-self-end">
           <input
             class="form-check-input appearance-none w-9 -ml-10 rounded-full float-left h-5 align-top bg-no-repeat bg-contain bg-gray-300 focus:outline-none focus:bg-red-400 cursor-pointer shadow-sm"
-            type="checkbox" role="switch">
+            type="checkbox"
+            role="switch"
+          />
         </div>
-
+      </div>
+      <div
+        class="flex justify-between items-center bg-white ml-6 mr-8 py-4 px-8 text-black border-t"
+        style="font-size: 16px"
+      >
+        <div class="flex w-3/5">
+          <div class="whitespace-nowrap flex flex-col justify-end items-end">
+            <p class="py-1 mb-3">ASNB Account Number</p>
+            <p class="py-1">Round up value</p>
+          </div>
+          <div class="">
+            <input
+              class="rounded mx-8 mb-3 w-64 text-gray-700 bg-white border border-solid border-gray-300 transition ease-in-out focus:text-gray-700 focus:bg-white text-xs px-2 py-1"
+              placeholder="Enter your ASNB Account Number"
+            />
+            <div class="relative mt-1 bg-white border border-solid border-gray-300  mx-8 w-64 rounded">
+              <div
+                class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-2"
+              >
+                <span class="text-gray-400 text-xs">RM</span>
+              </div>
+              <input
+                type="text"
+                name="price"
+                id="price"
+                class="block w-full rounded-md border-gray-300 px-10 text-black"
+                placeholder="1.00"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="w-2/5 self-end flex justify-end">
+        <div class="justify-self-end">
+          <p class="text-gray-500 text-xs">Have not signed up?</p>
+          <button class="text-white px-4 py-1 rounded mt-1" style="background-color: #1C5195">Create an ASNB Account</button>
+        </div>
+        
+        </div>
       </div>
     </div>
     <img src="~/assets/Checkout3.png" />
