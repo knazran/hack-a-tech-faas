@@ -61,8 +61,8 @@
                 type="text"
                 name="price"
                 id="price"
+                v-model="price"
                 class="block w-full rounded-md border-gray-300 px-10 text-black"
-                placeholder="1.00"
               />
             </div>
           </div>
@@ -92,7 +92,8 @@ export default {
   data() {
     return {
       checked: false,
-      signedUp: false
+      signedUp: false,
+      price: '1.00'
     }
   }
 };
