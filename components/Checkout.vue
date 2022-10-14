@@ -40,11 +40,12 @@
       >
         <div class="flex w-3/5">
           <div class="whitespace-nowrap flex flex-col justify-end items-end">
-            <p class="py-1 mb-3">ASNB Account Number</p>
+            <p v-if="!signedUp" class="py-1 mb-3">ASNB Account Number</p>
             <p class="py-1">Round up value</p>
           </div>
           <div class="">
             <input
+              v-if="!signedUp"
               class="rounded mx-8 mb-3 w-64 text-gray-700 bg-white border border-solid border-gray-300 transition ease-in-out focus:text-gray-700 focus:bg-white text-xs px-2 py-1"
               placeholder="Enter your ASNB Account Number"
             />
@@ -67,7 +68,8 @@
           </div>
         </div>
         <div class="w-2/5 self-end flex justify-end">
-          <div class="justify-self-end">
+          <div v-if="!signedUp" class="justify-self-end">
+            <button @click="signedUp = true" class="w-full text-white">toggle</button>
             <p class="text-gray-500 text-xs">Have not signed up?</p>
             <button
               class="text-white px-4 py-1 rounded mt-1"
@@ -89,7 +91,8 @@ export default {
   name: "Checkout",
   data() {
     return {
-      checked: false
+      checked: false,
+      signedUp: false
     }
   }
 };
